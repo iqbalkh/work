@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!-- Google SSO Header -->
+<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- END: Google SSO Header -->
+
+<title>Data</title>
+
+</head>
+<body>
+
+
+		<h2>
+			LOGIN<br>
+		</h2>
+		<div id="gConnect" style="margin-bottom: 10px;">
+			<button class="g-signin" data-scope="openid email profile"
+				data-clientId="980941911410-d3m76pob5bsha02rg0jidpkvc0snncvt.apps.googleusercontent.com"
+				data-accesstype="offline" data-callback="onSignInCallback"
+				data-theme="dark" data-cookiepolicy="single_host_origin"></button>
+		</div>
+		<div style="display: none;">
+			<form action="form-signupsignin-process.php" method="POST" id="signupsignin" name="signupsignin">
+
+				<input type="hidden" name="comingfrom" value="<?php echo $_SERVER['REQUEST_URI']; ?>" /> 
+				<input type="hidden" name="process" value="1" /> 
+				<input type="hidden" id="signup" name="signup" value="new" /> 
+				<input type="hidden" id="Group_ID" name="Group_ID" value="14" /> 
+				<input type="hidden" id="invite_id" name="invite_id" value="<?php echo $inviteID; ?>" />
+				<input type="hidden" id="googleID" name="googleID" value="" /> 
+				<input type="hidden" id="googleAccessToken" name="googleAccessToken" value="" />
+			    <input type="hidden" id="firstName" name="firstName" value="" /> 
+			    <input type="hidden" id="lastName" name="lastName" value="" /> 
+			    <input type="hidden" id="email" name="email" value="" />
+
+			</form>
+		</div>
+
+</body>
+<!-- Google SSO -->
+<script type="text/javascript" src="js/google-signin.js"></script>
+<!-- END: Google SSO -->
+</html>
